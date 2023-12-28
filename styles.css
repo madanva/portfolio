@@ -1,0 +1,841 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+* {
+    font-family: 'Lato', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, span {
+    color: #242424;
+    text-align: center;
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+p {
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    position: relative;
+    transition: all 200ms ease;
+}
+
+i:hover {
+    opacity: 0.7;
+}
+
+.link__hover-effect {
+    position: relative; /* This is needed for the absolute positioning of the pseudo-element to work */
+}
+
+.link__hover-effect:after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0;
+    bottom: -3px;
+    right: 0;
+    transition: width 300ms ease;
+}
+
+.link__hover-effect:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+
+.link__hover-effect--white:after {
+    background-color: white;
+}
+
+.link__hover-effect--black:after {
+    background-color: black;
+}
+
+li {
+    list-style-type: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.row {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+.text--purple {
+    color: #8a30b1;
+}
+
+.container {
+    padding: 10px 0;
+    width: 100%;
+}
+
+section:nth-child(even) {
+    background-color: #faf3e0;
+}
+
+
+.section__title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+body {
+    background: linear-gradient(to right, #b9f0ee, #f2d3bb);
+}
+
+/* NAVIGATION BAR */
+
+nav {
+    height: 100px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+}
+
+.nav__link--list {
+    display: flex;
+}
+
+.nav__link--anchor {
+    margin: 0 12px;
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav__link--anchor-primary {
+    background-color: purple;
+    padding: 8px 20px;
+    border-radius: 50px;
+    color: white;
+    transition: all 300ms ease;
+}
+
+.nav__link--anchor-primary:hover {
+    background-color: #5d3eff;
+}
+
+.personal__logo {
+    font-size: 20px;
+    color: #6030b1;
+    margin: 0 12px;
+    font-weight: bold;
+}
+
+/* ABOUT ME */
+
+
+#about-me {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3.25rem;
+}
+
+.about-me__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me__info--container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-me__picture--mask {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
+    margin-bottom: 24px;
+    animation: animate-profile-picture 700ms 300ms backwards;
+}
+
+@keyframes animate-profile-picture {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+.about-me__picture {
+    width: 100%;
+    transform: scale(1.1);
+    padding-right: 2px;
+}
+
+.about-me__info--title {
+    margin-bottom: 12px;
+    animation: fade-up 600ms 350ms backwards;
+}
+
+.about-me__info--para {
+    font-size: 20px;
+    margin-bottom: 28px;
+    animation: fade-up 600ms 450ms backwards;
+}
+
+.about-me__link {
+    font-size: 20px;
+    color: #242424;
+    text-decoration: none;
+    padding: 0 16px;
+}
+
+.about-me__links {
+    animation: fade-up 600ms 550ms backwards;
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-me__img--container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5rem;
+    max-height: 20rem;
+
+}
+
+.about-me__img {
+    width: 70%;
+    max-height: 100%; 
+    object-fit: cover;
+    border-radius: 4%;
+    animation: fade-in 1000ms 600ms backwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.wave {
+    display: inline-block;
+    animation: animate-wave 700ms 900ms ease-in-out;
+}
+
+@keyframes animate-wave {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+/* TECH-STACK */
+
+#languages {
+    margin-top: 1.25rem;
+    margin-bottom: 3.5rem;
+}
+
+.language__img {
+    width: 100%;
+    max-width: 100px;
+    transition: all 300ms ease;
+}
+
+.language:hover .language__img {
+    filter: birghtness(80%);
+    opacity: 0.86;
+    transform: scale(0.9);
+}
+
+.language {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.language__img {
+    max-width: 100%; /* Maximum width of the image is 100% of its container */
+    max-height: 100%; 
+    width: auto; 
+    height: auto; 
+    object-fit: cover; 
+}
+
+.language__img--wrapper {
+    width: 100%; /* Full width of the container */
+    height: 9rem; /* Fixed height */
+    overflow: hidden; /* Hide parts of the image that exceed the dimensions */
+    display: flex;
+    justify-content: center; /* Center image horizontally */
+    align-items: center; /* Center image vertically */
+    overflow: hidden;
+    padding: 25px 16px;
+}
+
+.language__list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 0rem;
+}
+
+.language__name {
+    position: absolute;
+    bottom: 0;
+    transform: scale(0);
+    transition: all 300ms;
+    font-size: 20px;
+    opacity: 0;
+}
+
+.language:hover .language__name {
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+/* PROJECTS */
+
+#projects {
+    display: flex; /* Establishes this element as a flex container */
+    flex-direction: column; /* Aligns children in a column */
+    align-items: center; /* Centers children horizontally in the column */
+    justify-content: center; /* Centers the items vertically if needed */
+    /* margin: auto; Applies auto margins on all sides for horizontal centering if flex-direction is row */
+    width: 100%; /* Ensures the #projects container takes up the full width of its parent */
+}
+
+.projects__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Creates a responsive number of columns */
+    grid-gap: 5rem; /* Space between grid items */
+    justify-content: center; /* Centers grid items in the container if there's extra space */
+    align-content: start; /* Aligns grid items to the start of the grid area */
+    padding: 2rem; /* Padding around the entire grid */
+}
+
+
+.project__img {
+    width: 100%;
+    height: 13rem;
+    object-fit: cover;
+    transition: all 500ms ease;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.project__wrapper {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    border-radius: 20px;
+    overflow: hidden;
+    justify-content: center;
+    margin: 0 auto; /* Center the wrapper if flex-direction of parent is row */
+    width: 100%; /* Set width to 100% to fill parent container */
+    height: 12.5rem;
+    object-fit: cover;
+}
+
+.project__wrapper:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0; /* It should be 0 to make the overlay invisible */
+    transition: opacity 450ms ease;
+    z-index: 2; /* Lower than the clickable elements */
+    pointer-events: none; /* This is crucial */
+}
+
+/* .project:hover .project__wrapper:before {
+    opacity: 0.7;
+} */
+
+.project__title {
+    margin-bottom: 1rem;
+}
+.project:hover .project__img {
+    transform: scale(1.07);
+    filter: blur(5px);
+    opacity: 0.3;
+}
+
+.project__wrapper {
+    /* existing styles */
+    position: relative; /* Ensure absolute positioning is relative to this wrapper */
+    overflow: visible; /* Ensure descriptions are not cut off */
+}
+
+.project:hover .project__description {
+    opacity: 1;
+    transform: translateY(-50%);
+}
+
+.project__list {
+    padding-top: 20px;
+}
+
+.project__description {
+    position: absolute;
+    margin: 0 1rem;
+    top: 50%;
+    transform: translateY(100%);
+    max-width: 550px;
+    opacity: 0;
+    transition: transform 450ms, opacity 300ms;
+}
+
+.project__description--title {
+    font-size: 30px;
+    color: black;
+}
+
+.project {
+    margin-bottom: 1.25rem; /* Space between project items */
+    width: 100%; /* Adjust if you want a max-width */
+    border-radius: 10px; /* Rounded corners for the cards */
+    overflow: hidden; 
+}
+
+
+
+.project:last-child {
+    margin-bottom: 3rem;
+}
+
+.project__description--para {
+    margin: 6px 0;
+    font-size: 12px;
+}
+
+.big-title {
+    font-size: 25px;
+}
+
+.project__description--links {
+    display: flex;
+    justify-content: center;
+}
+
+.project__description--link {
+    font-size: 20px;
+    margin-right: 16px;
+    position: relative; /* To make z-index work */
+    z-index: 3; /* Higher than its container and siblings */
+    pointer-events: auto;
+
+    display: inline-block; /* Make the link inline-block to control padding and size */
+    padding: 8px; /* Add padding to increase clickable area */
+    font-size: 20px; /* Adjust font size for the icon */
+    text-decoration: none;
+    color: #242424;
+    transition: color 0.3s;
+    padding: 10px; /* Add padding to increase clickable area */
+    font-size: 1rem; /* Adjust the size of the icon */
+    
+}
+
+.project__description--link:hover,
+.project__description--link:focus {
+    color: #5d3eff; /* Change color on hover/focus for feedback */
+}
+
+.project__description--link i {
+    pointer-events: auto; /* Ensure the icon receives pointer events */
+}
+
+
+.project__description--title,
+.project__description--subtitle,
+.project__description--para,
+.project__description--link {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+}
+
+
+
+/* FOOTER */
+
+footer {
+    background-color:#000000;
+}
+
+.footer__logo--img {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 1.5rem;
+}
+
+.footer__row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6% 0%;
+}
+
+.footer__social--list {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+
+.footer__social--link,
+.footer__copyright {
+    color: #fff;
+}
+
+.footer__logo--popper {
+    position: absolute;
+    right: 0;
+    color: #fff;
+    top: 30px;
+    font-weight: 700;
+    opacity: 0;
+    transition: all 300ms ease;
+}
+
+.footer__anchor {
+    position: relative;
+}
+
+.footer__anchor:hover .footer__logo--popper {
+    transform: translateX(60px);
+    opacity: 1;
+}
+
+.nav-toggle {
+    display: none; /* Hide the checkbox */
+}
+
+.nav-toggle-label {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.nav-toggle-label span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+/* small phones and tablets and smart phones */
+@media (max-width: 768px) {
+    nav {
+        height: 68px;
+    }
+
+    h1 {
+        font-size: 28px;
+        padding: 0 10px;
+    }
+
+    .about-me__info--para {
+        font-size: 18px;
+        padding: 0 10px;
+    }
+
+    .language {
+        width: calc(100%/4);
+    }
+
+    .project__description--para {
+        font-size: 14px;
+        text-align: center;
+
+    }
+
+    .project__description {
+        left: 30px;
+        padding-right: 30px;
+    }
+
+    .project {
+        padding: 0 20px;
+    }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+    /* .nav__link:not(:last-child) {
+        display: none;
+    } */
+
+    .language__img--wrapper {
+        width: 100%; /* Full width of the container */
+        height: 9rem; /* Fixed height */
+        overflow: hidden; /* Hide parts of the image that exceed the dimensions */
+        display: flex;
+        justify-content: center; /* Center image horizontally */
+        align-items: center; /* Center image vertically */
+        overflow: hidden;
+        padding: 25px 16px;
+    }
+    
+
+    .project__description {
+        padding: 0;
+        left: 0;
+        width: 100%;
+        margin: 0 0rem;
+
+    }
+
+    .personal__logo {
+        font-size: 18px;
+    }
+
+    .project {
+        padding: 0 20px;
+    }
+
+    .project__description--para {
+        font-size: 12px;
+        text-align: center;
+        margin: 8px 8px;
+        margin-bottom: 8px;
+    }
+
+    .project__description--link {
+        display: flex;
+        justify-content: center;
+    }
+
+    .project__description--title {
+        font-size: 22px;
+        line-height: 1;
+        text-align: center;
+    }
+
+    .big-title {
+        font-size: 18px;
+    }
+
+    .project__description--subtitle {
+        text-align: center;
+        margin: 12px 0;
+    }
+
+    .about-me__img {
+        width: 90%;
+        max-height: 100%; 
+        object-fit: cover;
+        border-radius: 4%;
+    }
+
+    .about-me__info--para {
+        font-size: 18px;
+        margin: 0 1px;
+        margin-bottom: 28px;
+        animation: fade-up 600ms 450ms backwards;
+    }
+
+    .nav__link--list {
+        display: none; /* Use flexbox for layout */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #faf3e0; /* Peach background color */
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        flex-direction: column;
+        justify-content: center; /* This centers vertically */
+        align-items: center; /* This centers horizontally */
+        padding-top: 50px; /* Adjust if necessary to push content below the 'X' */
+        box-sizing: border-box; /* Makes sure padding is included in height */
+    }
+
+    .nav__link {
+        width: 100%; /* Full width to center the text within */
+        text-align: center; /* Center the text within the link */
+        margin: 20px 0; /* Adjust margin for spacing between links */
+        font-size: 1.25rem; /* Adjust font size as needed */
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-toggle-label {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        z-index: 6;
+    }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: #333;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span {
+        background-color: transparent; /* This makes the middle bar disappear */
+    }
+
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        content: '';
+    }
+
+    .nav-toggle-label span::before {
+        top: 10px; /* Position for the top bar */
+    }
+
+    .nav-toggle-label span::after {
+        bottom: 10px; /* Position for the bottom bar */
+    }
+
+    /* Transform the hamburger icon into a cross when clicked */
+    .nav-toggle:checked + .nav-toggle-label span::before {
+        transform: rotate(45deg) translate(-50%, -50%);
+        top: 50%;
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span::after {
+        transform: rotate(-45deg) translate(-50%, -50%);
+        top: 50%;
+    }
+
+    .nav-toggle:checked ~ .nav__link--list {
+        display: block;
+    }
+
+    /* Animate hamburger icon into a cross */
+    .nav-toggle:checked + .nav-toggle-label span {
+        background: transparent;
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span:before {
+        transform: rotate(45deg);
+        background: #333;
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span:after {
+        transform: rotate(-45deg);
+        background: #333;
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span:before,
+    .nav-toggle:checked + .nav-toggle-label span:after {
+        top: 0;
+        position: absolute;
+    }
+
+    #main-content {
+        transition: filter 0.3s ease;
+        z-index: 4;
+        
+    }
+    
+    /* When the menu is open, blur the main content */
+    .nav-toggle:checked ~ #main-content {
+        filter: blur(5px);
+    }
+
+     .projects__list {
+        grid-gap: 2rem; /* Smaller gap on mobile */
+    }
+
+    .project__img {
+        width: 100%;
+        height: 11rem;
+        object-fit: cover;
+        transition: all 500ms ease;
+        border-radius: 20px;
+        object-fit: cover;
+    }
+    
+    .project__wrapper {
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        align-items: center; /* Center children horizontally */
+        border-radius: 20px;
+        overflow: hidden;
+        justify-content: center;
+        margin: 0 auto; /* Center the wrapper if flex-direction of parent is row */
+        width: 100%; /* Set width to 100% to fill parent container */
+        height: 11rem;
+        object-fit: cover;
+    }
+}
