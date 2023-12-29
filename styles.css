@@ -629,6 +629,10 @@ footer {
         display: none;
     } */
 
+    h1 {
+        font-size: 1.87;
+    }
+
     .language__img--wrapper {
         width: 100%; /* Full width of the container */
         height: 9rem; /* Fixed height */
@@ -650,7 +654,7 @@ footer {
     }
 
     .personal__logo {
-        font-size: 18px;
+        font-size: 1.1rem;
     }
 
     .project {
@@ -692,14 +696,10 @@ footer {
     }
 
     .about-me__info--para {
-        font-size: 1.12rem;
+        font-size: 1.1rem;
         margin: 0 2px;
         margin-bottom: 28px;
         animation: fade-up 600ms 450ms backwards;
-    }
-
-    .bigger-title {
-        font-size: 1.85rem;
     }
 
     .nav__link--list {
