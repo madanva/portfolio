@@ -692,8 +692,8 @@ footer {
     }
 
     .about-me__info--para {
-        font-size: 18px;
-        margin: 0 1px;
+        font-size: 1.06rem;
+        margin: 0 0px;
         margin-bottom: 28px;
         animation: fade-up 600ms 450ms backwards;
     }
