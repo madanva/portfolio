@@ -97,8 +97,8 @@ section:nth-child(even) {
 
 
 .section__title {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 1.3rem;
+    margin-bottom: 1.3rem;
 }
 
 
@@ -281,11 +281,6 @@ nav {
 
 /* TECH-STACK */
 
-#languages {
-    margin-top: 1.25rem;
-    margin-bottom: 3.5rem;
-}
-
 .language__img {
     width: 100%;
     max-width: 100px;
@@ -364,7 +359,7 @@ nav {
     grid-gap: 5rem; /* Space between grid items */
     justify-content: center; /* Centers grid items in the container if there's extra space */
     align-content: start; /* Aligns grid items to the start of the grid area */
-    padding: 2rem; /* Padding around the entire grid */
+    padding: 2rem; 
 }
 
 
@@ -407,9 +402,6 @@ nav {
     opacity: 0.7;
 } */
 
-.project__title {
-    margin-bottom: 1rem;
-}
 .project:hover .project__img {
     transform: scale(1.07);
     filter: blur(5px);
@@ -427,9 +419,9 @@ nav {
     transform: translateY(-50%);
 }
 
-.project__list {
+/* .project__list {
     padding-top: 20px;
-}
+} */
 
 .project__description {
     position: absolute;
@@ -628,6 +620,11 @@ footer {
     /* .nav__link:not(:last-child) {
         display: none;
     } */
+
+    .section__title {
+        margin-top: 1.4rem;
+        margin-bottom: 0rem;
+    }
 
     h1 {
         font-size: 1.89;
