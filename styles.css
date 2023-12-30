@@ -630,18 +630,30 @@ footer {
     } */
 
     h1 {
-        font-size: 1.87;
+        font-size: 1.89;
     }
 
     .language__img--wrapper {
         width: 100%; /* Full width of the container */
-        height: 9rem; /* Fixed height */
+        height: 8rem; /* Fixed height */
         overflow: hidden; /* Hide parts of the image that exceed the dimensions */
         display: flex;
         justify-content: center; /* Center image horizontally */
         align-items: center; /* Center image vertically */
         overflow: hidden;
         padding: 25px 16px;
+    }
+
+    .language__img {
+        max-width: 100%; /* Maximum width of the image is 100% of its container */
+        max-height: 100%; 
+        width: auto; 
+        height: 3.5rem; 
+        object-fit: cover; 
+    }
+
+    .R {
+        height: auto; 
     }
     
 
@@ -696,7 +708,7 @@ footer {
     }
 
     .about-me__info--para {
-        font-size: 1.1rem;
+        font-size: 1.08rem;
         margin: 0 2px;
         margin-bottom: 28px;
         animation: fade-up 600ms 450ms backwards;
